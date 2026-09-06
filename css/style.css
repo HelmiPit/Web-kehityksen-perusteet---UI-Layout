@@ -1,11 +1,9 @@
 :root {
-
---alice-blue: #E5EFFDff;
---icy-blue: #BAD9FCff;
---alice-blue-2: #E0EDFDff;
---maya-blue: #7EBEFCff;
---pale-sky: #C9E0FCff;
-
+    --alice-blue: #E5EFFDff;
+    --icy-blue: #BAD9FCff;
+    --alice-blue-2: #E0EDFDff;
+    --maya-blue: #7EBEFCff;
+    --pale-sky: #C9E0FCff;
 }
 
 * {
@@ -19,8 +17,14 @@ html, body {
 }
 
 body {
-    position: relative;
-    padding-bottom: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+main::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 nav {
@@ -30,7 +34,7 @@ nav {
 }
 
 nav a:nth-child(even) {
-    color: var(--alice-blue-2)
+    color: var(--alice-blue-2);
 }
 
 nav a {
@@ -50,17 +54,40 @@ h1 {
     margin: 30px 0;
 }
 
+.hero-banner {
+    background-image: url("../images/Sushi-Pittman-770x250.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-banner-content {
+    padding: 15px 30px;
+    border-radius: 8px;
+}
+
+.hero-banner-content h1 {
+    color: var(--alice-blue);
+    margin: 0;
+    font-size: 2.5rem;
+}
+
 main {
     background-color: white;
     background-image: url("../images/bidyut_prahari_5_03_08.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 70px;
+    padding: 30px 40px;
     width: 80%;
     max-width: 1000px;
-    margin: 0 auto 40px;
+    margin: 60px auto 120px auto; 
     position: relative;
+    min-height: calc(100vh - 400px);
 }
 
 .sushibuffetimg {
@@ -75,10 +102,14 @@ main {
 #sushirollimg {
     width: 100px;
     position: absolute;
-    top: auto;
     right: 15px;
     top: -50px;
-    
+    z-index: 10;
+}
+
+#open_dialog {
+    margin-bottom: 20px;
+    display: inline-block;
 }
 
 p {
@@ -91,10 +122,8 @@ footer {
     height: 100px;
     text-align: center;
     padding-top: 40px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
+    clear: both;
 }
 
 dialog::backdrop {
@@ -105,4 +134,39 @@ button {
     background-color: var(--icy-blue);
     padding: 5px;
     color: black;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 15px;
+    }
+
+    nav {
+        padding: 10px 5px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    main {
+        width: 90%;
+        padding: 20px;
+        margin: 30px auto 140px auto;
+    }
+
+    .sushibuffetimg {
+        float: none;
+        display: block;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #sushirollimg {
+        top: -30px;
+        right: 10px;
+        width: 60px;
+    }
 }
