@@ -10,10 +10,52 @@
     </head>
 
     <body>
+
 <dialog id="dialogi">
       <h2>Kirjaudu sisään</h2>
       <p>Syötä tietosi tähän</p>
-      <button>Sulje</button>
+
+      <form id="login-form">
+        <div class="form-group">
+            <label for="user-name">Nimi *</label>
+            <input
+                type="text"
+                id="user-name"
+                name="name"
+                minlength="4"
+                placeholder="enemmän kuin 3 kirjainta"
+                required
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="user-email">Sähköposti *</label>
+            <input
+                type="email"
+                id="user-email"
+                name="email"
+                pattern=".+@metropolia\.fi"
+                placeholder="nimi@metropolia.fi"
+                required
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="user-password">Salasana *</label>
+            <input
+                type="password"
+                id="user-password"
+                name="password"
+                pattern="(?=.*[A-Z])(?=.*[0-9]).*"
+                placeholder="1 iso kirjain ja 1 numero"
+                required
+            />
+            </div>
+
+            <button type="submit">Kirjaudu</button>
+      </form>
+
+      <button id="close_dialog" type="button">Sulje</button>
     </dialog>
 
         <nav>
