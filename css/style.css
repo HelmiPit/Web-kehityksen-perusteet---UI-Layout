@@ -21,16 +21,14 @@ body {
     padding: 0;
 }
 
-main::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
 nav {
     background-color: var(--maya-blue);
     padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 nav a:nth-child(even) {
@@ -43,15 +41,12 @@ nav a {
     margin: 0 10px;
     font-size: 16px;
     font-weight: bold;
+    transition: transform 0.2s ease;
 }
 
 nav a:hover {
     color: rgb(39, 54, 136);
-}
-
-h1 {
-    text-align: center;
-    margin: 30px 0;
+    transform: scale(1.1);
 }
 
 .hero-banner {
@@ -59,21 +54,26 @@ h1 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 180px;
+    min-height: 300px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .hero-banner-content {
-    padding: 15px 30px;
-    border-radius: 8px;
+    padding: 1.5rem 2rem;
 }
 
 .hero-banner-content h1 {
     color: var(--alice-blue);
     margin: 0;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.hero-banner-content p {
+    color: white;
+    font-size: clamp(1rem, 2vw, 1.3rem);
 }
 
 main {
@@ -90,21 +90,72 @@ main {
     min-height: calc(100vh - 400px);
 }
 
-.sushibuffetimg {
-    width: 200px;
-    max-width: 100%;
-    height: auto;
-    float: left;
-    margin-right: 20px;
-    margin-bottom: 20px;
-}
-
 #sushirollimg {
     width: 100px;
     position: absolute;
     right: 15px;
     top: -50px;
     z-index: 10;
+}
+
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 250px;
+}
+
+.about-content {
+    flex: 1;
+    min-width: 250px;
+}
+
+.sushibuffetimg {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.login-section {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+#open_dialog,
+form button,
+#close_dialog {
+    width: fit-content;
+    padding: 0.7rem 1.5rem;
+    border: 0;
+    border-radius: 999px;
+    background-color: var(--icy-blue);
+    color: black;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#open_dialog:hover,
+form button:hover,
+#close_dialog:hover {
+    transform: scale(1.05);
+}
+
+#open_dialog {
+    margin-bottom: 20px;
+}
+
+#close_dialog {
+    margin-top: 10px;
 }
 
 p {
@@ -114,11 +165,10 @@ p {
 footer {
     background-color: var(--maya-blue);
     color: rgb(255, 255, 255);
-    height: 100px;
+    min-height: 100px;
     text-align: center;
     padding-top: 40px;
     width: 100%;
-    clear: both;
 }
 
 dialog::backdrop {
@@ -151,28 +201,8 @@ form {
     font-weight: bold;
 }
 
-#open_dialog,
-form button,
-#close_dialog {
-    width: fit-content;
-    padding: 0.7rem 1.2rem;
-    border: 0;
-    border-radius: 5px;
-    background-color: var(--icy-blue);
-    color: black;
-    cursor: pointer;
-}
-
-#open_dialog {
-    margin-bottom: 20px;
-    display: inline-block;
-}
-
-#close_dialog {
-    margin-top: 10px;
-}
-
 @media screen and (max-width: 600px) {
+
     body {
         font-size: 15px;
     }
@@ -182,7 +212,6 @@ form button,
     }
 
     nav a {
-        display: inline-block;
         margin: 5px;
         font-size: 14px;
     }
@@ -193,16 +222,23 @@ form button,
         margin: 30px auto 140px auto;
     }
 
-    .sushibuffetimg {
-        float: none;
-        display: block;
-        width: 100%;
-        margin-right: 0;
+    .about-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .about-image,
+    .about-content {
+        min-width: 0;
     }
 
     #sushirollimg {
         top: -30px;
         right: 10px;
         width: 60px;
+    }
+
+    .hero-banner {
+        min-height: 250px;
     }
 }

@@ -4,59 +4,66 @@
         <title>Positioning Items</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <link rel="stylesheet" href="css/style.css" />
 
-         <script src="asemointi.js" defer></script>
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        />
+
+        <script src="asemointi.js" defer></script>
     </head>
 
     <body>
 
-<dialog id="dialogi">
-      <h2>Kirjaudu sisään</h2>
-      <p>Syötä tietosi tähän</p>
+        <dialog id="dialogi">
+            <h2>Kirjaudu sisään</h2>
+            <p>Syötä tietosi tähän</p>
 
-      <form id="login-form">
-        <div class="form-group">
-            <label for="user-name">Nimi *</label>
-            <input
-                type="text"
-                id="user-name"
-                name="name"
-                minlength="4"
-                placeholder="enemmän kuin 3 kirjainta"
-                required
-            />
-        </div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="user-name">Nimi *</label>
+                    <input
+                        type="text"
+                        id="user-name"
+                        name="name"
+                        minlength="4"
+                        placeholder="enemmän kuin 3 kirjainta"
+                        required
+                    />
+                </div>
 
-        <div class="form-group">
-            <label for="user-email">Sähköposti *</label>
-            <input
-                type="email"
-                id="user-email"
-                name="email"
-                pattern=".+@metropolia\.fi"
-                placeholder="nimi@metropolia.fi"
-                required
-            />
-        </div>
+                <div class="form-group">
+                    <label for="user-email">Sähköposti *</label>
+                    <input
+                        type="email"
+                        id="user-email"
+                        name="email"
+                        pattern=".+@metropolia\.fi"
+                        placeholder="nimi@metropolia.fi"
+                        required
+                    />
+                </div>
 
-        <div class="form-group">
-            <label for="user-password">Salasana *</label>
-            <input
-                type="password"
-                id="user-password"
-                name="password"
-                pattern="(?=.*[A-Z])(?=.*[0-9]).*"
-                placeholder="1 iso kirjain ja 1 numero"
-                required
-            />
-            </div>
+                <div class="form-group">
+                    <label for="user-password">Salasana *</label>
+                    <input
+                        type="password"
+                        id="user-password"
+                        name="password"
+                        pattern="(?=.*[A-Z])(?=.*[0-9]).*"
+                        placeholder="1 iso kirjain ja 1 numero"
+                        required
+                    />
+                </div>
 
-            <button type="submit">Kirjaudu</button>
-      </form>
+                <button type="submit">Kirjaudu</button>
+            </form>
 
-      <button id="close_dialog" type="button">Sulje</button>
-    </dialog>
+            <button id="close_dialog" type="button">Sulje</button>
+        </dialog>
 
         <nav>
             <a href="etusivu.html">Etusivu</a>
@@ -64,38 +71,67 @@
             <a href="yhteystiedot.html">Yhteystiedot</a>
             <a href="töihin.html">Töihin meille</a>
         </nav>
-        
-    <header class="hero-banner">
-        <div class="hero-banner-content">
-            <h1>Sushi Buffet</h1>
-        </div>
-    </header>
+
+        <!-- HERO SECTION -->
+        <header class="hero-banner">
+            <div class="hero-banner-content">
+                <h1>Sushi Buffet</h1>
+                <p>Tuoretta sushia jokaiseen makuun</p>
+            </div>
+        </header>
 
         <main>
 
-            <img id="sushirollimg" src="images/pngtree-sushi-roll-png-image_17407910.png" alt="sushiroll">
-
-            <h2>Lisää meistä</h2>
-
-            <button id="open_dialog">Kirjaudu sisään</button>
-
             <img
-                class="sushibuffetimg"
-                src="images/itsu-hki-5-of-28-1024x683.jpg"
-                alt="sushi buffet"
+                id="sushirollimg"
+                src="images/pngtree-sushi-roll-png-image_17407910.png"
+                alt="sushiroll"
             >
 
-            <p>
-                Tämä on sushi buffet ravintola, jossa voit nauttia herkullisista sushiruoista.
-            </p>
+            <!-- ABOUT SECTION -->
+            <section class="about-section">
 
-            <p>
-                Tarjoamme laajan valikoiman erilaisia sushilajeja, jotka on valmistettu tuoreista raaka-aineista.
-            </p>
+                <div class="about-image">
+                    <img
+                        class="sushibuffetimg"
+                        src="images/itsu-hki-5-of-28-1024x683.jpg"
+                        alt="sushi buffet"
+                    >
+                </div>
 
-            <p>
-                Tervetuloa!
-            </p>
+                <div class="about-content">
+                    <h2>Lisää meistä</h2>
+
+                    <p>
+                        Tämä on sushi buffet ravintola, jossa voit nauttia
+                        herkullisista sushiruoista.
+                    </p>
+
+                    <p>
+                        Tarjoamme laajan valikoiman erilaisia sushilajeja,
+                        jotka on valmistettu tuoreista raaka-aineista.
+                    </p>
+
+                    <p>
+                        Tervetuloa!
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- LOGIN SECTION -->
+            <section class="login-section">
+
+                <h2>Haluatko varata pöydän?</h2>
+
+                <p>Kirjaudu sisään jatkaaksesi.</p>
+
+                <button id="open_dialog">
+                    <i class="fa-solid fa-user"></i>
+                    Kirjaudu sisään
+                </button>
+
+            </section>
 
         </main>
 
